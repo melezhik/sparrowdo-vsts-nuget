@@ -1,7 +1,9 @@
+[% UNLESS skip_nuget_install %]
 - task: NuGetToolInstaller@0
   displayName: Use NuGet
   inputs:
     checkLatest: true
+[% END %]
 
 - task: NuGetCommand@2
   displayName: NuGet restore

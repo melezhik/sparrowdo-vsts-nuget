@@ -16,6 +16,7 @@ our sub tasks (%args) {
   template-create "$build-dir/.cache/build.yaml.sample", %(
     source => ( slurp %?RESOURCES<build.yaml> ),
     variables => %( 
+      skip_nuget_install => %args<skip-nuget-install>, 
       solution => %args<solution> || '"**\*.sln"',
       working_folder => %args<working-folder>,
       base_dir => "$build-dir/files"
